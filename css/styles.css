@@ -12,15 +12,6 @@ img {
     width: 160px;
 }
 
-
-
-.formDiv input {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-
 #itemList {
 	margin-top: 40px;
 }
@@ -32,5 +23,5 @@ img {
 	border: solid black 2px;
 	border-radius: 3px;
 	padding: 10px;
-	background-color: rgb(228, 246, 255) ;
+	background-color: rgb(228, 246, 255);
 }
