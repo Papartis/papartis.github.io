@@ -20,16 +20,16 @@ function generateMockData(numberOfItems)
       let randomNumber = Math.floor(Math.random() * 20);
       if(randomNumber < 5)
       {
-        imageSource ="https://shorturl.at/qsV25";
+        imageSource ="img/shirt.jpg";
         return "Shirt";
       } else if (randomNumber < 10){
-        imageSource = "https://bit.ly/311Geer";
+        imageSource = "img/pants.jpg";
         return "Pants";
       } else if (randomNumber < 15){
-        imageSource = "https://shorturl.at/fiqrC";
+        imageSource = "img/shoes.jpg";
         return "Shoes";
       } else {
-        imageSource = "https://shorturl.at/uDLQU";
+        imageSource = "img/glasses.png";
         return "Glasses";
       }  
     }
