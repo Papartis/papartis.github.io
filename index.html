@@ -5,15 +5,41 @@
       Demo Page
     </title>
     <link rel="stylesheet" href="css/styles.css">
-    <script type="text/javascript" src="javascript/script.js"></script>
+   
   </head>
-  <body onload="displayItems()">
+  <body onload="displayItems(generateMockData(15));">
     <h1>Demo page</h1>
     <h4>
-Demo page displays item cards, each generated as an object with some random properties and added using DOM manipulation. 
-Technologies used: JavaScript, CSS, Html. 
+Demo page displays item cards, each generated as an object with some random properties and added using DOM manipulation.
+
+Item with custom properties can be added by clicking "Create new" button.
+
+<span class="newLine">Technologies used: JavaScript, CSS, Html.</span>
     </h4>
     <a href="https://github.com/Papartis/papartis.github.io">Repository</a>
-    <div class="itemList" id="itemList"></div>
+    <button id="openFormModal">Create new</button>
+    <!-- Modal -->
+    <div id="formModal" class="modal">
+       <!-- Modal content -->
+       <div class="modal-content">
+       	   <span class="close">&times;</span>
+       	   <!-- Form for creating an item card -->
+       	   <form>
+       	   	  <label for="title">Title</label>
+       	   	  <input type="text" id="title" name="title">
+               <label for="image">Image source URL</label>
+              <input type="text" id="image" name="image" value="https://shorturl.at/ghnuC">
+               <label for="price">Price</label>
+              <input type="text" id="price" name="price">
+               <label for="size">Size</label>
+              <input type="text" id="size" name="size">             
+       	   </form>
+              <button id="createItem">Add to list</button>
+       </div>
+    </div>
+    
+
+    <div class="itemList" id="itemList"></div> 
+    <script type="text/javascript" src="javascript/script.js"></script>  
   </body>
 </html>

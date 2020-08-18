@@ -1,14 +1,3 @@
-function colorChange(x)
-{
-  if(x.style.backgroundColor === "" || x.style.backgroundColor === "rgb(250, 200, 250)"){
-  	  x.style.backgroundColor = "rgb(200, 190, 230)";
-  } else if (x.style.backgroundColor === "rgb(200, 190, 230)"){
-  	  x.style.backgroundColor = "rgb(160, 250, 160";
-  } else {
-  	  x.style.backgroundColor = "rgb(250, 200, 250)";
-  }
-}
-
 class Item {
 	constructor({id , name, image, price, size}){
 		this.itemId = id;
@@ -20,11 +9,8 @@ class Item {
 }
 
 
-function displayItems()
-{
-
-  // Generate mock data
-  function generateMockData(numberOfItems)
+// Generate mock data, return an array of objects
+function generateMockData(numberOfItems)
    {
     let itemArray = [];
     let imageSource = "";
@@ -50,7 +36,7 @@ function displayItems()
 
     function randomSize(){
       let randomNumber = Math.floor(Math.random() * 30);
-      return (randomNumber < 10 ? "S" : (randomNumber < 20 ? "M": "L") );
+      return (randomNumber < 10 ? "S" : (randomNumber < 20 ? "M": "L"));
     }
 
     for(let i = 0; i < numberOfItems; i++){
@@ -64,11 +50,38 @@ function displayItems()
     }
     return itemArray;
   };
+
+//Open form modal
+let openModalBtn = document.getElementById("openFormModal");
+let modal = document.getElementById("formModal");
+let span = document.getElementsByClassName("close")[0];
+let createItemBtn = document.getElementById("createItem");
+
+openModalBtn.onclick = function(){modal.style.display = "block"}; //Make modal visible
+span.onclick = () => {modal.style.display = "none"}; //Make modal invisible after x is clicked
+//Make modal invisible after click outside of modal
+window.onclick = function(event) { 
+  if (event.target == modal) {
+  modal.style.display = "none";
+  }
+}
+
+createItemBtn.onclick = function(){
+  let title = document.getElementById("title").value;
+  let image = document.getElementById("image").value;
+  let price = document.getElementById("price").value;
+  let size = document.getElementById("size").value;
+
+  displayItems([{"id": 1, "name": title, "image": image,"price": price,"size": size}]);
+  modal.style.display = "none";
+}
+
+//Display objects in HTML
+function displayItems(itemArray)
+{ 
   
-  let itemCards = generateMockData(15);
+  let itemCards = itemArray;
 
-
-  // Read mock data
 
   for(let i = 0; i < itemCards.length; i++){
     let itemCard = new Item(itemCards[i]);
