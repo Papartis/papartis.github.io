@@ -72,7 +72,7 @@ createItemBtn.onclick = function(){
   let price = document.getElementById("price").value;
   let size = document.getElementById("size").value;
   let itemCardArr = document.getElementsByClassName("itemCard");
-  let lastItemId = parseInt(itemCardArr[itemCardArr.length - 1].id) + 1 ;
+  let lastItemId = parseInt(itemCardArr[itemCardArr.length - 1].id) + 1;
 
   displayItems([{"id": lastItemId, "name": title, "image": image,"price": price,"size": size}]);
   modal.style.display = "none";
