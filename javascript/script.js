@@ -94,6 +94,7 @@ function displayItems(itemArray)
   	}
   }
 
+
   // Generating DOM HTML elements
   let divElement = document.createElement("div");
   divElement.className = "itemCard";
